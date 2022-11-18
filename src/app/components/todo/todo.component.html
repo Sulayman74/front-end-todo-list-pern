@@ -1,0 +1,18 @@
+<section class="container">
+  <table>
+    <thead>
+      <tr class="todo-title">
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="taches" *ngFor="let task of todos">
+        <td>{{ task.description }}</td>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Edit</button>
+          <button mat-flat-button color="warn">Delete</button>
+        </mat-card-actions>
+      </tr>
+    </tbody>
+  </table>
+</section>

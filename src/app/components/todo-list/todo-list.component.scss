@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vw;
+  box-sizing: border-box;
+  .mat-form-field {
+    color: white;
+    width: 90%;
+  }
+
+  #btn-submit {
+    padding: 0 15px;
+    transition: all ease 0.3s;
+    &:hover {
+      transform: scale(1.05);
+      background-color: rgb(203, 244, 249);
+      .mat-icon {
+        color: rgb(38, 99, 231);
+        filter: drop-shadow(2px 2px 2px rgba(102, 183, 244, 0.679));
+      }
+    }
+  }
+}
