@@ -1,0 +1,18 @@
+<section class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Tâches</mat-label>
+    <input
+      placeholder="todos"
+      type="text"
+      id="input-main"
+      (keypress)="onEnter($event)"
+      matInput
+      [formControl]="formCtrl"
+    />
+  </mat-form-field>
+  <button (click)="onSubmit()" mat-flat-button color="primary" id="btn-submit">
+    <mat-icon>check_circle</mat-icon>
+  </button>
+</section>
+
+<app-todo [todos]="fromParentTask"></app-todo>
