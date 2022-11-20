@@ -1,5 +1,7 @@
 # TodoList
 
+projet basé PERN que j'ai choisi de faire plutôt sur Angular au lieu de REACT.js
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
 ## Development server
