@@ -13,28 +13,27 @@ import { map } from 'rxjs';
 export class TodoListComponent implements OnInit {
 
   formCtrl = new FormControl('')
-  todos!: Todo[]
+  todos!: any
   @Input() fromParentTask!: Todo[]
-  task!: Todo
+  task!: any
 
   constructor(private _todoService: TodoService) { }
 
   ngOnInit(): void {
-
-    // const todo = this.todos.map((value: Todo) => {
-    //   this.task = value
-    //   console.warn(this.task.description);
-    // })
-    // console.log("test @Input", this.fromParentTask);
+  
   }
 
   onSubmit() {
 
     // console.log("test avec input", this.formCtrl.value);
-    this._todoService.addTask(this.formCtrl.value).pipe(map((task: Todo) => {
-      this.task = task
-      console.warn(this.task);
-    })).subscribe()
+    this._todoService.addTask(this.formCtrl.value).subscribe((task:Todo)=>{
+      console.log(task);
+      this.fromParentTask.push(task)
+    })
+    // this._todoService.addTask(this.formCtrl.value).pipe(map((task: Todo) => {
+    //   this.task = task
+    //   console.warn(this.task);
+    // })).subscribe()
     this.formCtrl.reset()
   }
 

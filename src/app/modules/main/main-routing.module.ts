@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: "todo-list", component: TodoListComponent,
         children: [
-          { path: "todo", component: TodoComponent, resolve: { todos: HelperResolver } }
+          { path: "todo", component: TodoComponent, }
         ]
       }]
   }

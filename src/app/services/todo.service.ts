@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Todo } from '../models/todo';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -19,22 +21,21 @@ export class TodoService {
       { description: todo });
   }
 
-
-
   getTodos(): Observable<any> {
     return this._http.get(`${this._apiUrl}allTodos`)
   }
 
   getATodo(id: number): Observable<any> {
-    return this._http.get(`${this._apiUrl}${id}/one`)
+    return this._http.get(`${this._apiUrl}one/${id}`)
   }
 
-  delete(task_id: number): Observable<any> {
-    return this._http.delete(`${this._apiUrl}${task_id}/delete`)
+  delete(id: any): Observable<any> {
+
+    return this._http.delete(`${this._apiUrl}delete/${id}`)
   }
 
   updateTodo(id: number, editTodo: string): Observable<any> {
-    return this._http.put(`${this._apiUrl}${id}/update`,
+    return this._http.put(`${this._apiUrl}update/${id}`,
       { description: editTodo })
   }
 
