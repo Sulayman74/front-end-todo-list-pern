@@ -1,6 +1,6 @@
 table {
-  background-color: green;
-  width: 100%;
+  background-color: transparent;
+  width: 60vw;
   height: 50vh;
   padding: 5px;
   margin: 0px;
@@ -10,7 +10,7 @@ table {
   .todo-title {
     padding: 0;
     margin: 0;
-    color: whitesmoke;
+    color: beige;
     font-size: 1.1em;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
@@ -23,20 +23,21 @@ table {
   tbody {
     display: flex;
     flex-direction: column;
-    color: whitesmoke;
+    color: rgb(177, 246, 246);
     box-sizing: border-box;
+    justify-content: space-around;
 
     td {
       margin: 0;
       padding: 10px 25px;
       display: flex;
-      justify-content: flex-start;
-      flex-direction: column;
-      width: 50vw;
+      justify-content: space-evenly;
+      // flex-direction: column;
+      width: 100%;
 
       #taches {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         font-size: 1em;
         font-family: "Roboto", serif;
@@ -51,7 +52,7 @@ table {
           margin: 8px;
           display: flex;
           width: 100%;
-          justify-content: space-evenly;
+          justify-content: space-around;
         }
       }
     }
