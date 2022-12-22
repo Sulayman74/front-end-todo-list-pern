@@ -1,7 +1,8 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
 import { Todo } from 'src/app/models/todo';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +12,10 @@ import { Todo } from 'src/app/models/todo';
 export class MainComponent implements OnInit {
 
   tasks!: Todo[]
-  constructor(private _activatedRoute: ActivatedRoute) { }
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+    private _userService : UserService,
+    private _router :Router) { }
 
   ngOnInit(): void {
     
@@ -20,6 +24,11 @@ export class MainComponent implements OnInit {
       this.tasks = todos
     })
 
+  }
+
+  onDisconnect(){
+    this._userService.clearToken()
+    this._router.navigate(['/'])
   }
 
 }

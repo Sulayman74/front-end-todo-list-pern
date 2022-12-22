@@ -1,9 +1,18 @@
+.mat-toolbar{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20%;
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
 .main_container {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1561bd;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   overflow-y: scroll;
   padding: auto;
