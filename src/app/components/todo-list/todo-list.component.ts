@@ -20,15 +20,16 @@ export class TodoListComponent implements OnInit {
   constructor(private _todoService: TodoService) { }
 
   ngOnInit(): void {
-  
+
   }
 
   onSubmit() {
 
     // console.log("test avec input", this.formCtrl.value);
-    this._todoService.addTask(this.formCtrl.value).subscribe((task:Todo)=>{
+    this._todoService.addTask(this.formCtrl.value).subscribe((task: Todo) => {
       console.log(task);
       this.fromParentTask.push(task)
+      return this.fromParentTask
     })
     // this._todoService.addTask(this.formCtrl.value).pipe(map((task: Todo) => {
     //   this.task = task
