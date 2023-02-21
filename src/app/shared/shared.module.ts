@@ -29,7 +29,7 @@ import { NgModule } from '@angular/core';
     HttpClientModule,
     MatToolbarModule
   ],
-  exports:[
+  exports: [
     CommonModule,
     EditModalComponent,
     FormsModule,
@@ -42,7 +42,7 @@ import { NgModule } from '@angular/core';
     MatSnackBarModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
   ]
 })
 export class SharedModule { }

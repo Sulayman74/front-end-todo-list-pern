@@ -7,7 +7,7 @@
   box-sizing: border-box;
   // padding: 10px 0 5px 5px;
   border-radius: 3px;
-  background-color: whitesmoke;
+  background-color: transparent;
   margin: 50px 0 15px 0;
   .container {
     .mat-form-field {
@@ -35,5 +35,4 @@
   flex-direction: column;
   align-items: center;
   border-radius: 3px;
-  box-shadow: 2px 1px 10px rgba(245, 245, 245, 0.525);
 }

@@ -1,11 +1,18 @@
-<mat-toolbar><p class="logout">
-  <button mat-fab type="button" color="warn" (click)="onDisconnect()"><mat-icon>close</mat-icon></button>
-</p>
-</mat-toolbar>
+<button
+  mat-fab
+  type="button"
+  class="logout"
+  color="warn"
+  (click)="onDisconnect()"
+>
+  <mat-icon>close</mat-icon>
+</button>
+<button mat-fab type="button" class="logout" color="warn" (click)="onTest()">
+  <mat-icon>close</mat-icon>
+</button>
 
 <section class="main_container">
   <div class="child_container">
     <app-todo-list [fromParentTask]="tasks"></app-todo-list>
-
   </div>
 </section>

@@ -25,6 +25,10 @@ export class TodoService {
     return this._http.get(`${this._apiUrl}allTodos`)
   }
 
+  getTodo(): Observable<any> {
+    return this._http.get(`${this._apiUrl}todos`)
+  }
+
   getATodo(id: number): Observable<any> {
     return this._http.get(`${this._apiUrl}one/${id}`)
   }

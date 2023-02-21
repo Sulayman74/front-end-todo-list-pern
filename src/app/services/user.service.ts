@@ -13,7 +13,7 @@ export class UserService {
 
 
   private _apiUrl = `${environment.Api_URL}users/`
-  
+
   currentUser = new Subject<any>()
   loggedUser = new Subject<any>()
 
@@ -21,7 +21,7 @@ export class UserService {
     private _http: HttpClient,
     private _router: Router) { }
 
-  static getToken(){
+  static getToken() {
     return localStorage.getItem('token')
   }
 
@@ -35,15 +35,21 @@ export class UserService {
     this._router.navigate(['main'])
   }
 
-  login(log : User): Observable<any> {
+  login(log: User): Observable<any> {
     // console.log(log);
-    return this._http.post(`${this._apiUrl}login`,log)
+    return this._http.post(`${this._apiUrl}login`, log)
   }
 
   register(user: User): Observable<any> {
     // console.log(salarie, "Test du register 1");
-    return this._http.post(`${this._apiUrl}/register`, user)
+    return this._http.post(`${this._apiUrl}register`, user)
 
+  }
+  getUser(): Observable<any> {
+    return this._http.get(`${this._apiUrl}allUsers`)
+  }
+  getProfile(): Observable<any> {
+    return this._http.get(`${this._apiUrl}getProfile`)
   }
 
 }

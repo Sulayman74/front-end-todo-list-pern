@@ -1,24 +1,31 @@
 <section class="container">
+  <form id="formulaire" [formGroup]="login">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Email"
+        formControlName="email"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Password"
+        formControlName="password"
+      />
+    </mat-form-field>
 
-    <form id="formulaire" [formGroup]="login">
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="Email" formControlName="email">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input type="text" matInput placeholder="Password" formControlName="password">
-        </mat-form-field>
-
-        <div class="buttons">
-            <button mat-flat-button color="primary" (click)="onLogin()">
-                Valider
-            </button>
-            <button mat-raised-button color="accent" (click)="onRegister()">
-                Sign up
-            </button>
-        </div>
-
-    </form>
-
+    <div class="buttons">
+      <button mat-flat-button color="primary" (click)="onLogin()">
+        Valider
+      </button>
+      <button mat-raised-button color="accent" (click)="onRegister()">
+        Sign up
+      </button>
+    </div>
+  </form>
 </section>

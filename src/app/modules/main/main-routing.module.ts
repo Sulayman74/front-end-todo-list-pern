@@ -8,7 +8,7 @@ import { TodoListComponent } from 'src/app/components/todo-list/todo-list.compon
 
 const routes: Routes = [
   {
-    path: "", component: MainComponent, resolve: { todos: HelperResolver },
+    path: "main", component: MainComponent, resolve: { todos: HelperResolver },
     children: [
       {
         path: "todo-list", component: TodoListComponent,

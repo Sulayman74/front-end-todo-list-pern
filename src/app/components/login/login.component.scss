@@ -1,19 +1,24 @@
-.container{
+.container {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(250, 235, 215, 0.463);
+  box-shadow: 1px 1px 3px black;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  #formulaire {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    padding: 10px;
+    min-height: 300px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    #formulaire{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .buttons{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
+  }
 }
