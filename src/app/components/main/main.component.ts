@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
+import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { take } from 'rxjs';
 
@@ -14,6 +15,7 @@ import { take } from 'rxjs';
 export class MainComponent implements OnInit {
 
   tasks!: Todo[]
+  users!: User[];
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _userService: UserService,
@@ -22,6 +24,10 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this._activatedRoute.data.subscribe(({ users }) => {
+      console.log(users);
+      this.users = users
+    })
     this._activatedRoute.data.subscribe(({ todos }) => {
       console.log(todos);
       this.tasks = todos
