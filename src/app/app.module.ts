@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginModule } from './modules/login/login.module';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
+import { TokenInterceptorProvider } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SharedModule } from './shared/shared.module';
     LoginModule
 
   ],
-  providers: [],
+  providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
