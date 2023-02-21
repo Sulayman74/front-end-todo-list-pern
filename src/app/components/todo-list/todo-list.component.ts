@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
+import { User } from 'src/app/models/user';
 import { map } from 'rxjs';
 
 @Component({
@@ -15,11 +16,15 @@ export class TodoListComponent implements OnInit {
   formCtrl = new FormControl('')
   todos!: any
   @Input() fromParentTask!: Todo[]
+  @Input() fromParentUser!: User[]
+  user!: any
   task!: any
+
 
   constructor(private _todoService: TodoService) { }
 
   ngOnInit(): void {
+    console.log(this.fromParentUser);
 
   }
 
