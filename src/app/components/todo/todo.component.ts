@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from './../../services/todo.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-todo',
@@ -11,14 +12,14 @@ import { TodoService } from './../../services/todo.service';
 export class TodoComponent implements OnInit {
 
   @Input() todos!: Todo[]
-  // @Input() task!: Todo
+
+  @Input() user!: User[]
   newTodos!: Todo[]
   constructor(private _deleteTask: TodoService) { }
 
   ngOnInit(): void {
     console.log("AllTodos from Todo Component", this.todos);
-    this.todos
-    this.newTodos
+    console.log(this.user);
   }
 
   onDelete(id: any) {
