@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _router: Router,
-    private _userService: UserService
+    private _userService: UserService,
+    private _snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -37,13 +39,13 @@ export class LoginComponent implements OnInit {
     let loggedUser = this.login.value
     this.utilisateur = Object.assign(this.utilisateur, loggedUser)
     this._userService.login(loggedUser).subscribe((reponse: any) => {
-
+      console.log(reponse);
       if (reponse) {
         localStorage.setItem('token', reponse.token)
         this._router.navigate(['/main'])
-
+        this._snackbar.open(`${reponse.message}`, "OK", { duration: 1500 })
       }
-    
+
     })
   }
 

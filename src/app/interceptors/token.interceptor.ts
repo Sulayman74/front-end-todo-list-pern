@@ -18,7 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
   regex = new RegExp('localhost:7070');
 
-  constructor(private _snackbar: MatSnackBar) {}
+  constructor(private _snackbar: MatSnackBar) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
@@ -43,11 +43,10 @@ export class TokenInterceptor implements HttpInterceptor {
             case 404:
               message = "Vous n'êtes pas bien connecté"
               break;
-
             default: message = "Erreur de connexion"
               break;
           }
-          this._snackbar.open(message, "ok")
+          this._snackbar.open(message, "OK", { duration: 2000 })
           return next.handle(modifiedReq)
         })
       )

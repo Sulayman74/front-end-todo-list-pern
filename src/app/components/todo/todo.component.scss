@@ -21,6 +21,7 @@ table {
   }
 
   tbody {
+    position: fixed;
     display: flex;
     flex-direction: column;
     color: rgb(177, 246, 246);
@@ -33,7 +34,7 @@ table {
       display: flex;
       justify-content: space-evenly;
       // flex-direction: column;
-      width: 100%;
+      width: 60vw;
 
       #taches {
         display: flex;

@@ -10,6 +10,7 @@
 <button mat-fab type="button" class="logout" color="warn" (click)="onTest()">
   <mat-icon>close</mat-icon>
 </button>
+<p *ngIf="myUser">{{ myUser }}</p>
 
 <section class="main_container">
   <div class="child_container">
@@ -19,3 +20,6 @@
     ></app-todo-list>
   </div>
 </section>
+<div *ngFor="let item of newTask">
+  <p>{{ item.description }}</p>
+</div>

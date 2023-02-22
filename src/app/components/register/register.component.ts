@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _router: Router,
-    private _userService: UserService
+    private _userService: UserService,
+    private _snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -38,12 +40,16 @@ export class RegisterComponent implements OnInit {
     const formulaire = this.register.value
     this.utilisateur = Object.assign(this.utilisateur, formulaire)
 
-    this._userService.register(this.utilisateur).subscribe((reponse: any) => {
-      console.log("test onSubmit register user", reponse);
-      this._userService.setToken(reponse.token)
+    this._userService.register(formulaire).subscribe((reponse: any) => {
+      let token = reponse.token
+      if (reponse) {
+        this._userService.setToken(token)
+        this._snackbar.open("Connectez vous avec vos identifiants", "OK", { duration: 2000 })
+      }
+
     })
 
-    this._router.navigate(['main'])
+    this._router.navigate(['/login'])
   }
 
 }

@@ -32,7 +32,7 @@ export class UserService {
 
   setToken(token: string) {
     localStorage.setItem('token', token)
-    this._router.navigate(['main'])
+    this._router.navigate(['/login'])
   }
 
   login(log: User): Observable<any> {
