@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoginModule } from './modules/login/login.module';
 import { NgModule } from '@angular/core';
+import { RegisterModule } from './modules/register/register.module';
 import { SharedModule } from './shared/shared.module';
 import { TokenInterceptorProvider } from './interceptors/token.interceptor';
 
@@ -17,7 +18,8 @@ import { TokenInterceptorProvider } from './interceptors/token.interceptor';
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    LoginModule
+    LoginModule,
+    RegisterModule
 
   ],
   providers: [TokenInterceptorProvider],

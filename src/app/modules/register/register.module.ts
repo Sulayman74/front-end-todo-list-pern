@@ -8,6 +8,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     RegisterRoutingModule,
     SharedModule
-  ]
+  ],
+  exports: [RegisterComponent]
+
 })
 export class RegisterModule { }
