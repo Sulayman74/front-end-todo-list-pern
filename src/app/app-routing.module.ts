@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  { path: "", loadChildren: () => import("./modules/main/main.module").then(m => m.MainModule) },
-  { path: "", redirectTo: "main", pathMatch: "full" }
+  {
+    path: "", redirectTo: "login", pathMatch: "full"
+  },
+  { path: "", loadChildren: () => import("./modules/main/main.module").then(m => m.MainModule) }
 ];
 
 @NgModule({

@@ -10,6 +10,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from "@angular/material/toolbar";
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -25,9 +26,10 @@ import { NgModule } from '@angular/core';
     MatInputModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ],
-  exports:[
+  exports: [
     CommonModule,
     EditModalComponent,
     FormsModule,
@@ -39,7 +41,8 @@ import { NgModule } from '@angular/core';
     MatInputModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
   ]
 })
 export class SharedModule { }

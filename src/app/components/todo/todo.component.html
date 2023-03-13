@@ -6,12 +6,24 @@
       </tr>
     </thead>
     <tbody>
-      <tr id="taches" *ngFor="let task of todos">
-        <td>{{ task.description }}</td>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Edit</button>
-          <button mat-flat-button color="warn">Delete</button>
-        </mat-card-actions>
+      <tr>
+        <td *ngFor="let todo of todos; let index = index">
+          <div id="taches">
+            <p *ngIf="newTodos || todo.description">
+              {{ todo.description }}
+            </p>
+            <mat-card-actions>
+              <button mat-raised-button color="primary">Edit</button>
+              <button
+                mat-flat-button
+                color="warn"
+                (click)="onDelete(todo.todo_id)"
+              >
+                Delete
+              </button>
+            </mat-card-actions>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

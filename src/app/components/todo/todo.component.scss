@@ -1,31 +1,61 @@
 table {
   background-color: transparent;
-  width: 100%;
+  width: 60vw;
   height: 50vh;
+  padding: 5px;
+  margin: 0px;
+  box-sizing: border-box;
+  border-radius: 3px;
 
   .todo-title {
-    color: whitesmoke;
+    padding: 0;
+    margin: 0;
+    color: beige;
     font-size: 1.1em;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    width: 100%;
+
     th {
+      margin: 0;
       padding: 10px 25px;
     }
   }
+
   tbody {
-    color: whitesmoke;
-    font-size: 1.2em;
-    font-family: "Times New Roman", Times, serif;
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    color: rgb(177, 246, 246);
+    box-sizing: border-box;
+    justify-content: space-around;
+
     td {
+      margin: 0;
       padding: 10px 25px;
-    }
-    .mat-card-actions {
-      margin: 8px;
       display: flex;
       justify-content: space-evenly;
+      // flex-direction: column;
+      width: 60vw;
+
+      #taches {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1em;
+        font-family: "Roboto", serif;
+        width: 100%;
+
+        p {
+          text-align: center;
+          width: 100%;
+        }
+
+        .mat-card-actions {
+          margin: 8px;
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+        }
+      }
     }
   }
 }

@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
+import { User } from 'src/app/models/user';
 import { map } from 'rxjs';
 
 @Component({
@@ -13,28 +14,32 @@ import { map } from 'rxjs';
 export class TodoListComponent implements OnInit {
 
   formCtrl = new FormControl('')
-  todos!: Todo[]
+  todos!: any
   @Input() fromParentTask!: Todo[]
-  task!: Todo
+  @Input() fromParentUser!: User[]
+  user!: any
+  task!: any
+
 
   constructor(private _todoService: TodoService) { }
 
   ngOnInit(): void {
+    console.log(this.fromParentUser);
 
-    // const todo = this.todos.map((value: Todo) => {
-    //   this.task = value
-    //   console.warn(this.task.description);
-    // })
-    // console.log("test @Input", this.fromParentTask);
   }
 
   onSubmit() {
 
     // console.log("test avec input", this.formCtrl.value);
-    this._todoService.addTask(this.formCtrl.value).pipe(map((task: Todo) => {
-      this.task = task
-      console.warn(this.task);
-    })).subscribe()
+    this._todoService.addTask(this.formCtrl.value).subscribe((task: Todo) => {
+      console.log(task);
+      this.fromParentTask.push(task)
+      return this.fromParentTask
+    })
+    // this._todoService.addTask(this.formCtrl.value).pipe(map((task: Todo) => {
+    //   this.task = task
+    //   console.warn(this.task);
+    // })).subscribe()
     this.formCtrl.reset()
   }
 

@@ -1,0 +1,27 @@
+<section class="container">
+
+    <form id="formulaire" [formGroup]="register" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Lastname</mat-label>
+            <input type="text" matInput placeholder="Nom" formControlName="lastname" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Firstname</mat-label>
+            <input type="text" matInput placeholder="Prénom" formControlName="firstname" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="text" matInput placeholder="Password" formControlName="password" required>
+        </mat-form-field>
+
+<button type="submit" mat-flat-button color="primary" [disabled]="register.invalid">
+    Valider
+</button>
+    </form>
+
+</section>

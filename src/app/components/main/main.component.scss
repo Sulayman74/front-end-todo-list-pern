@@ -2,6 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: purple;
-  height: 80vh;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  padding: auto;
+  margin: auto;
+}
+.logout {
+  transition: all ease 0.3s;
+  margin: 10px;
+  &:hover {
+    transform: rotate(45deg);
+  }
 }

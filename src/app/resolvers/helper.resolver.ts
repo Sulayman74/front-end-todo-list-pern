@@ -17,6 +17,7 @@ export class HelperResolver implements Resolve<Todo[]> {
   constructor(private _todoService: TodoService) { }
 
   resolve(): Observable<Todo[]> {
+  
     return this._todoService.getTodos().pipe(map((value: any) => this.task = value))
   }
 }

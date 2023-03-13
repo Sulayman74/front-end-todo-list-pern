@@ -1,5 +1,25 @@
+<button
+  mat-fab
+  type="button"
+  class="logout"
+  color="warn"
+  (click)="onDisconnect()"
+>
+  <mat-icon>close</mat-icon>
+</button>
+<button mat-fab type="button" class="logout" color="warn" (click)="onTest()">
+  <mat-icon>close</mat-icon>
+</button>
+<p *ngIf="myUser">{{ myUser }}</p>
+
 <section class="main_container">
   <div class="child_container">
-    <app-todo-list [fromParentTask]="tasks"></app-todo-list>
+    <app-todo-list
+      [fromParentTask]="tasks"
+      [fromParentUser]="users"
+    ></app-todo-list>
   </div>
 </section>
+<div *ngFor="let item of newTask">
+  <p>{{ item.description }}</p>
+</div>

@@ -1,6 +1,7 @@
 export class Todo {
 
-    readonly id!: number
+    readonly todo_id!: number
     description!: string
+    user_id !: number
 
 }

@@ -1,16 +1,24 @@
-.container {
+.todo-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60vw;
+  width: 100%;
+  height: auto;
   box-sizing: border-box;
-  .mat-form-field {
-    color: white;
-    width: 90%;
+  // padding: 10px 0 5px 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  margin: 50px 0 15px 0;
+  .container {
+    .mat-form-field {
+      color: white;
+      width: 90%;
+      padding: 20px 2px 0px 2px;
+    }
   }
-
   #btn-submit {
     padding: 0 15px;
+    margin: 0 5px;
     transition: all ease 0.3s;
     &:hover {
       transform: scale(1.05);
@@ -21,4 +29,10 @@
       }
     }
   }
+}
+.second {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
 }

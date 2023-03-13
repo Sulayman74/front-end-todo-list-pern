@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 228, 196, 0.511);
+  backdrop-filter: blur(15px);
+  padding: 10px;
+  border-radius: 3px;
+  #formulaire {
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+}

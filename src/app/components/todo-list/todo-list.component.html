@@ -1,5 +1,5 @@
-<section class="container">
-  <mat-form-field appearance="fill">
+<section class="todo-list">
+  <mat-form-field class="container" appearance="fill">
     <mat-label>Tâches</mat-label>
     <input
       placeholder="todos"
@@ -14,5 +14,6 @@
     <mat-icon>check_circle</mat-icon>
   </button>
 </section>
-
-<app-todo [todos]="fromParentTask"></app-todo>
+<section class="second container">
+  <app-todo [todos]="fromParentTask" [user]="fromParentUser"></app-todo>
+</section>
