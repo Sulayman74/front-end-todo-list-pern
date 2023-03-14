@@ -36,7 +36,7 @@ export class UserService {
   }
 
   login(log: User): Observable<any> {
-    // console.log(log);
+    console.log(this._apiUrl);
     return this._http.post(`${this._apiUrl}login`, log)
   }
 
